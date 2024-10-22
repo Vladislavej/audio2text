@@ -1,8 +1,8 @@
 import torch
 import whisper
 
+print(torch.cuda.get_device_name(0) + " is available:")
 print(torch.cuda.is_available())
-print(torch.cuda.get_device_name(0))
 
 model = whisper.load_model("medium", device="cuda")
 result = model.transcribe("audio.mp3", language="sk")
